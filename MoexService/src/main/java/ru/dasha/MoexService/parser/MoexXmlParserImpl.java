@@ -46,7 +46,7 @@ public class MoexXmlParserImpl implements Parser {
                     if (node.getNodeType() == Node.ELEMENT_NODE) {
                         var element = (Element) node;
                         String ticker = element.getAttribute("SECID");
-                        String price = element.getAttribute("PREVADMITTEDQUOTE");
+                        String price = element.getAttribute("PREVPRICE");
                         String name = element.getAttribute("SHORTNAME");
                         if (!ticker.isEmpty() && !price.isEmpty() && !name.isEmpty()) {
                             bonds.add(new BondDto(ticker, name, Double.parseDouble(price)));
